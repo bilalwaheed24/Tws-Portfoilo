@@ -7,6 +7,13 @@
     <meta name="author" content="Bilal Waheed" />
     <title>Bilal Waheed | DevOps Portfolio</title>
 
+    <!-- Open Graph Meta Tags for SEO/Social Sharing -->
+    <meta property="og:title" content="Bilal Waheed | DevOps Portfolio" />
+    <meta property="og:description" content="Junior DevOps Engineer passionate about Cloud, Linux, and Automation. Kubestronaut in Progress." />
+    <meta property="og:image" content="assets/profile.jpeg" />
+    <meta property="og:url" content="https://github.com/bilalwaheed24/Tws-Portfoilo" />
+    <meta property="og:type" content="website" />
+
     <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
@@ -23,6 +30,7 @@
         --secondary: #0a192f;
         --accent: #64ffda;
         --text: #e6f1ff;
+        --bg-dark: #000;
       }
 
       * {
@@ -37,12 +45,13 @@
         color: var(--text);
         overflow-x: hidden;
         scroll-behavior: smooth;
+        line-height: 1.6;
       }
 
       header {
         text-align: center;
         padding: 120px 20px 60px;
-        background: url('https://i.ibb.co/fqb0yJ8/stars-bg.gif') center/cover no-repeat;
+        background: url('assets/stars-bg.gif') center/cover no-repeat; /* Download and host locally from https://i.ibb.co/fqb0yJ8/stars-bg.gif */
         position: relative;
       }
 
@@ -59,6 +68,8 @@
       header .content {
         position: relative;
         z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
       }
 
       header img {
@@ -68,6 +79,7 @@
         border: 3px solid var(--accent);
         box-shadow: 0 0 30px var(--accent);
         margin-bottom: 20px;
+        object-fit: cover;
       }
 
       header h1 {
@@ -75,12 +87,15 @@
         font-size: 2.5rem;
         color: var(--primary);
         text-shadow: 0 0 15px var(--primary);
+        margin-bottom: 10px;
       }
 
       header p {
         font-size: 1.1rem;
         color: var(--text);
         opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       nav {
@@ -91,6 +106,7 @@
         top: 0;
         backdrop-filter: blur(10px);
         z-index: 999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       }
 
       nav a {
@@ -99,22 +115,31 @@
         margin: 0 15px;
         font-weight: 600;
         transition: 0.3s;
+        position: relative;
       }
 
-      nav a:hover {
+      nav a:hover,
+      nav a:focus {
         color: var(--accent);
+        outline: none;
+      }
+
+      nav a:focus {
+        text-shadow: 0 0 5px var(--accent);
       }
 
       section {
         padding: 80px 10%;
         text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       section h2 {
         font-family: 'Orbitron', sans-serif;
         color: var(--accent);
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         text-shadow: 0 0 10px var(--accent);
       }
 
@@ -122,6 +147,27 @@
         max-width: 800px;
         margin: auto;
         line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .about .certifications {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .certification {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid var(--primary);
+        transition: 0.3s;
+      }
+
+      .certification:hover {
+        box-shadow: 0 0 15px var(--primary);
       }
 
       .skills {
@@ -137,9 +183,12 @@
         border: 1px solid var(--primary);
         border-radius: 15px;
         padding: 20px 30px;
-        width: 150px;
+        min-width: 150px;
         transition: 0.3s;
         box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .skill-box:hover {
@@ -161,6 +210,7 @@
         padding: 25px;
         transition: 0.4s;
         box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+        text-align: left;
       }
 
       .project-card:hover {
@@ -168,21 +218,59 @@
         box-shadow: 0 0 30px var(--accent);
       }
 
+      .project-card h3 {
+        color: var(--accent);
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      .project-card p {
+        margin-bottom: 15px;
+      }
+
+      .project-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .project-card a:hover {
+        color: var(--accent);
+      }
+
+      .contact p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
+      }
+
       .contact a {
         display: inline-block;
         margin: 15px;
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: var(--primary);
         transition: 0.3s;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--primary);
+        text-decoration: none;
       }
 
       .contact a:hover {
         color: var(--accent);
         text-shadow: 0 0 15px var(--accent);
+        transform: scale(1.1);
+        box-shadow: 0 0 20px var(--accent);
       }
 
       footer {
-        background: #000;
+        background: var(--bg-dark);
         color: var(--text);
         text-align: center;
         padding: 25px 0;
@@ -203,23 +291,128 @@
       .glow {
         animation: glow 1.5s ease-in-out infinite alternate;
       }
+
+      /* Scroll to top button */
+      #scrollToTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--accent);
+        color: var(--secondary);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 1000;
+      }
+
+      #scrollToTop.visible {
+        opacity: 1;
+      }
+
+      #scrollToTop:hover {
+        background: var(--primary);
+        transform: scale(1.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          padding: 80px 10px 40px;
+        }
+
+        header h1 {
+          font-size: 2rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        section {
+          padding: 60px 5%;
+        }
+
+        section h2 {
+          font-size: 1.8rem;
+        }
+
+        nav a {
+          margin: 0 10px;
+          font-size: 0.95rem;
+        }
+
+        .skills {
+          gap: 20px;
+        }
+
+        .skill-box {
+          min-width: 120px;
+          padding: 15px 20px;
+          font-size: 0.9rem;
+        }
+
+        .projects {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .project-card {
+          padding: 20px;
+        }
+
+        .about .certifications {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .contact a {
+          margin: 10px;
+          font-size: 1.5rem;
+          width: 40px;
+          height: 40px;
+        }
+
+        #scrollToTop {
+          bottom: 10px;
+          right: 10px;
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header img {
+          width: 120px;
+          height: 120px;
+        }
+
+        .skill-box {
+          min-width: 100px;
+          padding: 10px 15px;
+        }
+      }
     </style>
   </head>
 
   <body>
     <header>
       <div class="content">
-        <img src="assets/img/profile.jpeg" alt="Bilal Waheed" />
+        <img src="assets/profile.jpeg" alt="Profile photo of Bilal Waheed, Junior DevOps Engineer" />
         <h1 class="glow">Bilal Waheed</h1>
         <p>Junior DevOps Engineer | Kubestronaut in Progress | Cloud & Linux Enthusiast</p>
       </div>
     </header>
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" aria-label="About section">About</a>
+      <a href="#skills" aria-label="Skills section">Skills</a>
+      <a href="#projects" aria-label="Projects section">Projects</a>
+      <a href="#contact" aria-label="Contact section">Contact</a>
     </nav>
 
     <section id="about" class="about">
@@ -231,18 +424,22 @@
         and I’m constantly improving my automation and cloud deployment skills.
         My mission is to grow into a full-time <strong>DevOps Engineer</strong> and a future <strong>Kubestronaut</strong> 🚀.
       </p>
+      <div class="certifications">
+        <div class="certification">Google Cloud Certified</div>
+        <div class="certification">Al Nafi Linux Expert</div>
+      </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills">
-        <div class="skill-box">AWS</div>
-        <div class="skill-box">Docker</div>
-        <div class="skill-box">Jenkins</div>
-        <div class="skill-box">Linux</div>
-        <div class="skill-box">Git & GitHub</div>
-        <div class="skill-box">Kubernetes</div>
-        <div class="skill-box">Terraform</div>
+        <div class="skill-box"><i class="fab fa-aws" style="margin-right: 5px;"></i> AWS</div>
+        <div class="skill-box"><i class="fab fa-docker" style="margin-right: 5px;"></i> Docker</div>
+        <div class="skill-box"><i class="fab fa-jenkins" style="margin-right: 5px;"></i> Jenkins</div>
+        <div class="skill-box"><i class="fab fa-linux" style="margin-right: 5px;"></i> Linux</div>
+        <div class="skill-box"><i class="fab fa-git-alt" style="margin-right: 5px;"></i> Git & GitHub</div>
+        <div class="skill-box"><i class="fab fa-docker" style="margin-right: 5px;"></i> Kubernetes</div>
+        <div class="skill-box"><i class="fab fa-hashnode" style="margin-right: 5px;"></i> Terraform</div>
       </div>
     </section>
 
@@ -252,28 +449,55 @@
         <div class="project-card">
           <h3>🤖 AI Voice Bot</h3>
           <p>Python-based AI call assistant integrated with Asterisk & Vicidial for automated voice response.</p>
+          <a href="https://github.com/bilalwaheed24/ai-voice-bot" target="_blank">View on GitHub</a>
         </div>
         <div class="project-card">
           <h3>🐧 Linux Automation</h3>
           <p>Bash scripts for automated server tasks and log analysis on Ubuntu & CentOS.</p>
+          <a href="https://github.com/bilalwaheed24/linux-automation" target="_blank">View on GitHub</a>
         </div>
         <div class="project-card">
           <h3>⚙️ Jenkins CI/CD Pipeline</h3>
           <p>Built a Jenkins pipeline for automated Flask app deployment with Docker & GitHub integration.</p>
+          <a href="https://github.com/bilalwaheed24/jenkins-pipeline" target="_blank">View on GitHub</a>
         </div>
       </div>
+      <!-- Note: Update GitHub links to your actual repos; these are placeholders based on project names -->
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact Me</h2>
       <p>Let’s connect and build something amazing together!</p>
-      <a href="mailto:bilalwaheed@example.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/bilalwaheed24"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/bilal-waheed5354/"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:thebilalwaheed@gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+923129477396" aria-label="Call or message on phone"><i class="fas fa-phone"></i></a>
+      <a href="https://github.com/bilalwaheed24" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/bilal-waheed5354/" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
     </section>
 
     <footer>
       <p>Made with 💙 by Bilal Waheed | 2025 | Kubestronaut DevOps Edition</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Simple JS for scroll-to-top functionality
+      window.onscroll = function() {
+        const button = document.getElementById('scrollToTop');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          button.classList.add('visible');
+        } else {
+          button.classList.remove('visible');
+        }
+      };
+
+      function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
   </body>
 </html>
