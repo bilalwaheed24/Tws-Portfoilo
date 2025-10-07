@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
+                // ✅ Direct URL likho, empty mat chhoro
                 git branch: 'main', url: 'https://github.com/bilalwaheed24/Tws-Portfoilo.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'No build needed for this static portfolio.'
+                echo 'No build needed — static portfolio website.'
             }
         }
 
