@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/bilalwaheed24/Tws-Portfoilo.git'
+                git branch: 'main', url: 'https://github.com/bilalwaheed24/Tws-Portfoilo.git'
             }
         }
 
@@ -18,9 +18,8 @@ pipeline {
             steps {
                 echo 'Deploying Portfolio...'
                 sh '''
-                # Example: copy files to /var/www/html/
-                sudo rm -rf /var/www/html/*
-                sudo cp -r * /var/www/html/
+                rm -rf /var/www/html/*
+                cp -r * /var/www/html/
                 '''
             }
         }
