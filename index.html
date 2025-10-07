@@ -1,218 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Portfolio of Bilal Waheed - IT Support Specialist, DevOps & Cloud Enthusiast" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Bilal Waheed - Junior DevOps Engineer & Kubestronaut in Progress" />
     <meta name="author" content="Bilal Waheed" />
-    <title>Bilal Waheed | Portfolio</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" />
-    <!-- Core theme CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+    <title>Bilal Waheed | DevOps Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <style>
+      :root {
+        --primary: #00e5ff;
+        --secondary: #0a192f;
+        --accent: #64ffda;
+        --text: #e6f1ff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background: radial-gradient(circle at top, #0a192f 20%, #000 100%);
+        color: var(--text);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        text-align: center;
+        padding: 120px 20px 60px;
+        background: url('https://i.ibb.co/fqb0yJ8/stars-bg.gif') center/cover no-repeat;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 25, 47, 0.7);
+      }
+
+      header .content {
+        position: relative;
+        z-index: 2;
+      }
+
+      header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 30px var(--accent);
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.5rem;
+        color: var(--primary);
+        text-shadow: 0 0 15px var(--primary);
+      }
+
+      header p {
+        font-size: 1.1rem;
+        color: var(--text);
+        opacity: 0.9;
+      }
+
+      nav {
+        background: rgba(10, 25, 47, 0.9);
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+        z-index: 999;
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      section {
+        padding: 80px 10%;
+        text-align: center;
+      }
+
+      section h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--accent);
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px var(--accent);
+      }
+
+      .about p {
+        max-width: 800px;
+        margin: auto;
+        line-height: 1.8;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .skill-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--primary);
+        border-radius: 15px;
+        padding: 20px 30px;
+        width: 150px;
+        transition: 0.3s;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+      }
+
+      .skill-box:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px var(--accent);
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--primary);
+        border-radius: 12px;
+        padding: 25px;
+        transition: 0.4s;
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 30px var(--accent);
+      }
+
+      .contact a {
+        display: inline-block;
+        margin: 15px;
+        font-size: 1.5rem;
+        color: var(--primary);
+        transition: 0.3s;
+      }
+
+      .contact a:hover {
+        color: var(--accent);
+        text-shadow: 0 0 15px var(--accent);
+      }
+
+      footer {
+        background: #000;
+        color: var(--text);
+        text-align: center;
+        padding: 25px 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        border-top: 1px solid var(--accent);
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px var(--accent);
+        }
+        to {
+          text-shadow: 0 0 25px var(--primary), 0 0 40px var(--accent);
+        }
+      }
+
+      .glow {
+        animation: glow 1.5s ease-in-out infinite alternate;
+      }
+    </style>
   </head>
 
-  <body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top">Bilal Waheed</a>
-        <button
-          class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container d-flex align-items-center flex-column">
-        <img class="masthead-avatar mb-5" src="assets/img/profile.png" alt="Bilal Waheed" />
-        <h1 class="masthead-heading text-uppercase mb-0">Bilal Waheed</h1>
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-        <p class="masthead-subheading font-weight-light mb-0">
-          IT Support Specialist • DevOps & Cloud Enthusiast • Learner
-        </p>
+  <body>
+    <header>
+      <div class="content">
+        <img src="assets/img/profile.jpeg" alt="Bilal Waheed" />
+        <h1 class="glow">Bilal Waheed</h1>
+        <p>Junior DevOps Engineer | Kubestronaut in Progress | Cloud & Linux Enthusiast</p>
       </div>
     </header>
 
-    <!-- Portfolio Section -->
-    <section class="page-section portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        I’m <strong>Bilal Waheed</strong>, currently working as an <strong>IT Support Specialist</strong> at IDRAK AI Pvt. Ltd.
+        I’m passionate about <strong>DevOps, Linux, and Cloud Infrastructure</strong>.
+        I’ve completed certifications from <strong>Google</strong> and <strong>Al Nafi</strong>,
+        and I’m constantly improving my automation and cloud deployment skills.
+        My mission is to grow into a full-time <strong>DevOps Engineer</strong> and a future <strong>Kubestronaut</strong> 🚀.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-box">AWS</div>
+        <div class="skill-box">Docker</div>
+        <div class="skill-box">Jenkins</div>
+        <div class="skill-box">Linux</div>
+        <div class="skill-box">Git & GitHub</div>
+        <div class="skill-box">Kubernetes</div>
+        <div class="skill-box">Terraform</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>🤖 AI Voice Bot</h3>
+          <p>Python-based AI call assistant integrated with Asterisk & Vicidial for automated voice response.</p>
         </div>
-
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div class="portfolio-item-caption-content text-center text-white">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/linux.png" alt="Linux Projects" />
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div class="portfolio-item-caption-content text-center text-white">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/devops.png" alt="DevOps Projects" />
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div class="portfolio-item-caption-content text-center text-white">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/ai-bot.png" alt="AI Bot Project" />
-            </div>
-          </div>
+        <div class="project-card">
+          <h3>🐧 Linux Automation</h3>
+          <p>Bash scripts for automated server tasks and log analysis on Ubuntu & CentOS.</p>
+        </div>
+        <div class="project-card">
+          <h3>⚙️ Jenkins CI/CD Pipeline</h3>
+          <p>Built a Jenkins pipeline for automated Flask app deployment with Docker & GitHub integration.</p>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 ms-auto">
-            <p class="lead">
-              I’m <strong>Bilal Waheed</strong>, an <strong>IT Support Specialist</strong> at IDRAK AI Pvt. Ltd.
-              with a passion for <strong>Linux, DevOps, and Cloud Cybersecurity</strong>.  
-              I’ve completed certifications from <strong>Google</strong> and <strong>Al Nafi</strong>, and I’m
-              continuously learning to master <strong>automation, cloud infrastructure, and security operations</strong>.
-            </p>
-          </div>
-          <div class="col-lg-4 me-auto">
-            <p class="lead">
-              My goal is to become a <strong>DevOps Engineer</strong> — building scalable, secure, and automated systems
-              that support modern business applications.  
-              I love working with tools like <strong>Docker, Jenkins, Git, and AWS</strong>.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center mt-4">
-          <a class="btn btn-xl btn-outline-light" href="https://www.linkedin.com/in/bilalwaheed">
-            <i class="fab fa-linkedin me-2"></i>
-            Connect on LinkedIn
-          </a>
-        </div>
-      </div>
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>Let’s connect and build something amazing together!</p>
+      <a href="mailto:bilalwaheed@example.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/bilalwaheed24"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/bilal-waheed5354/"><i class="fab fa-linkedin"></i></a>
     </section>
 
-    <!-- Contact Section -->
-    <section class="page-section" id="contact">
-      <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <div class="text-center mb-4">
-          <p class="lead">
-            If you’d like to collaborate or have a project in mind, feel free to reach out!
-          </p>
-        </div>
-
-        <div class="text-center">
-          <a href="mailto:bilalwaheed@example.com" class="btn btn-primary btn-xl">
-            <i class="fas fa-envelope me-2"></i>Email Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Location</h4>
-            <p class="lead mb-0">Islamabad, Pakistan</p>
-          </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/bilalwaheed"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/bilalwaheed"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/"
-              ><i class="fab fa-twitter"></i
-            ></a>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About This Site</h4>
-            <p class="lead mb-0">Designed & developed by Bilal Waheed using Bootstrap.</p>
-          </div>
-        </div>
-      </div>
+    <footer>
+      <p>Made with 💙 by Bilal Waheed | 2025 | Kubestronaut DevOps Edition</p>
     </footer>
-
-    <div class="copyright py-4 text-center text-white">
-      <div class="container"><small>Copyright &copy; BilalWaheed.com 2025</small></div>
-    </div>
-
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
   </body>
 </html>
