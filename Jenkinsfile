@@ -4,17 +4,13 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // Option 1 (recommended)
                 git branch: 'main', url: 'https://github.com/bilalwaheed24/Tws-Portfoilo.git'
-
-                // Option 2 (if Git is already set in Jenkins job)
-                // checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                echo 'No build needed — static website project'
+                echo 'No build needed for this static portfolio.'
             }
         }
 
@@ -22,14 +18,13 @@ pipeline {
             steps {
                 script {
                     try {
-                        echo '🚀 Deploying Portfolio...'
+                        echo '🚀 Deploying Portfolio to /var/www/html/'
                         sh '''
                             sudo cp -r * /var/www/html/
-                            echo "✅ Deployment completed successfully!"
+                            echo "✅ Deployment successful!"
                         '''
                     } catch (err) {
-                        echo '❌ Deployment failed!'
-                        error("Deployment step failed: ${err}")
+                        echo "❌ Deployment failed: ${err}"
                     }
                 }
             }
