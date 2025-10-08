@@ -4,14 +4,13 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // ✅ Direct URL likho, empty mat chhoro
                 git branch: 'main', url: 'https://github.com/bilalwaheed24/Tws-Portfoilo.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'No build needed — static portfolio website.'
+                echo 'No build needed — static website project'
             }
         }
 
@@ -19,13 +18,22 @@ pipeline {
             steps {
                 script {
                     try {
-                        echo '🚀 Deploying Portfolio to /var/www/html/'
+                        echo '🚀 Deploying Portfolio to /var/www/html/ ...'
+                        
+                        // Create directory if not exists and give permission to Jenkins
                         sh '''
-                            sudo cp -r * /var/www/html/
-                            echo "✅ Deployment successful!"
+                            sudo mkdir -p /var/www/html/
+                            sudo chown -R jenkins:jenkins /var/www/html/
+                        '''
+
+                        // Copy files (no sudo needed)
+                        sh '''
+                            cp -r * /var/www/html/
+                            echo "✅ Deployment completed successfully!"
                         '''
                     } catch (err) {
-                        echo "❌ Deployment failed: ${err}"
+                        echo '❌ Deployment failed!'
+                        error("Deployment step failed: ${err}")
                     }
                 }
             }
