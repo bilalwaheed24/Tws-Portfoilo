@@ -19,14 +19,8 @@ pipeline {
                 script {
                     try {
                         echo '🚀 Deploying Portfolio to /var/www/html/ ...'
-                        
-                        // Create directory if not exists and give permission to Jenkins
-                        sh '''
-                            sudo mkdir -p /var/www/html/
-                            sudo chown -R jenkins:jenkins /var/www/html/
-                        '''
 
-                        // Copy files (no sudo needed)
+                        // Copy all files to deployment folder
                         sh '''
                             cp -r * /var/www/html/
                             echo "✅ Deployment completed successfully!"
